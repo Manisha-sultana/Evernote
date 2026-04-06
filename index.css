@@ -1,15 +1,88 @@
-/* Basic styles (Tailwind removed for minimal dev setup) */
-html,body,#root {
+/* Full page setup */
+html,
+body,
+#root {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: #f9fafb;
+
+  /* Gradient Background */
+  background: linear-gradient(135deg, #667eea, #764ba2);
+
   color: #111827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* small helpers */
+body {
+  background: linear-gradient(-45deg, #667eea, #764ba2, black, #ee0979);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%
+  }
+
+  50% {
+    background-position: 100%
+  }
+
+  100% {
+    background-position: 0%
+  }
+}
+
+/* Main container (card style) */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+
+  /* Shadow effect */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading style */
+h1 {
+  text-align: center;
+  color: #4f46e5;
+}
+
+/* Button styling */
+button {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Input styling */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Hidden text helper */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -17,8 +90,7 @@ body {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
 }
-
